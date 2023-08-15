@@ -2,11 +2,11 @@
 
 ## 1. Team Members
 
-Lu Qinwen	  A0261847W
-Cai Zimo		  A0261628B
-Hu Zhiqing	  A0261637B
-Yu Hanchun	A0261716E
-Cai Zheng 	   A0261940H
+* Lu Qinwen	  
+* Cai Zimo		  
+* Hu Zhiqing	  
+* Yu Hanchun	
+* Cai Zheng 	   
 
 ## 2. Our remote repos
 
