@@ -1,0 +1,252 @@
+[
+  {
+    "instruction": "How to fix 'undefined: foo' error in Go?",
+    "input": "main.go:3:6: undefined: foo\n",
+    "output": "It looks like the 'foo' function is not defined. Define the 'foo' function or remove the reference to it to fix the issue."
+  },
+  {
+    "instruction": "What causes 'index out of range' error in Go?",
+    "input": "runtime error: index out of range\n",
+    "output": "This error occurs when you try to access an element outside the valid range of an array, slice, or string. Make sure to check your indices and ensure they are within the bounds of the data structure."
+  },
+  {
+    "instruction": "How to resolve 'cannot convert x (type X) to type Y' error in Go?",
+    "input": "cannot convert x (type X) to type Y\n",
+    "output": "To fix this error, you need to explicitly convert the value 'x' of type 'X' to type 'Y'. Use the correct conversion syntax, such as 'y := Y(x)', where 'y' is of type 'Y'."
+  },
+  {
+    "instruction": "How to fix 'panic: runtime error: invalid memory address or nil pointer dereference' error in Go?",
+    "input": "panic: runtime error: invalid memory address or nil pointer dereference\n",
+    "output": "This error occurs when you're trying to dereference a nil pointer or an invalid memory address. Make sure to check if the pointer is nil before accessing its value. If it's expected to be nil, allocate memory or initialize it properly before using it."
+  },
+  {
+    "instruction": "What causes 'multiple-value foo() in single-value context' error in Go?",
+    "input": "multiple-value foo() in single-value context\n",
+    "output": "This error occurs when you try to assign the result of a function 'foo' that returns multiple values to a single value. If you're interested in only one value, use the appropriate syntax to select the desired value, like 'result := foo()'. If you need all the values, ensure you assign them to the correct number of variables."
+  },
+  {
+    "instruction": "How to resolve 'undefined: variable' error in Go?",
+    "input": "undefined: variable\n",
+    "output": "This error indicates that the variable you're trying to use is not defined in the current scope. Make sure you have declared the variable before using it, either in the same function or in an accessible outer scope."
+  },
+  {
+    "instruction": "What causes 'invalid operation: x == y (operator == not defined on T)' error in Go?",
+    "input": "invalid operation: x == y (operator == not defined on T)\n",
+    "output": "This error occurs when you're trying to compare two values of type 'T' using the '==' operator, but the '==' operation is not defined for type 'T'. Implement the '==' operator for type 'T' if you want to compare its values using the '==' operator."
+  },
+  {
+    "instruction": "How to fix 'cannot use x (type X) as type Y in assignment' error in Go?",
+    "input": "cannot use x (type X) as type Y in assignment\n",
+    "output": "To resolve this error, you need to perform a type conversion from 'X' to 'Y' explicitly. Use the appropriate conversion syntax, such as 'y := Y(x)', where 'y' is of type 'Y'."
+  },
+  {
+    "instruction": "How to handle 'unreachable code' error in Go?",
+    "input": "unreachable code\n",
+    "output": "This error occurs when you have code that cannot be reached during program execution, usually because there is a return statement or panic statement before it. Review your control flow and make sure the unreachable code is removed or rearranged to be reachable."
+  },
+  {
+    "instruction": "What causes 'missing return at end of function' error in Go?",
+    "input": "missing return at end of function\n",
+    "output": "This error occurs when a function is declared to return a value, but there is no return statement or the return statement is missing at the end of the function. Make sure to include a return statement that returns the appropriate value or revise the function's return type if it should not return any value."
+  },
+  {
+    "instruction": "How to fix 'cannot find package' error in Go?",
+    "input": "cannot find package\n",
+    "output": "This error indicates that the Go compiler cannot find the specified package. Check the import statement and verify that the package name and its path are correct. Ensure that the package is installed and accessible in your Go workspace or in the specified module."
+  },
+  {
+    "instruction": "What causes 'expected ';'', found 'identifier'' error in Go?",
+    "input": "expected ';', found 'identifier'\n",
+    "output": "This error occurs when there is a missing semicolon ';' in your Go code. Check the line mentioned in the error message and make sure it ends with a semicolon. If you intended to declare or use an identifier, ensure it is correctly referenced in the code."
+  },
+  {
+    "instruction": "How to resolve 'undefined: method' error in Go?",
+    "input": "undefined: method\n",
+    "output": "This error indicates that the method you're trying to use is not defined for the given type or interface. Make sure the method is declared and implemented in the correct type or interface. If you're trying to call a method on a variable of an interface type, ensure the underlying type implements the method."
+  },
+  {
+    "instruction": "What causes 'invalid type assertion: x.(T) (non-interface type x on left)' error in Go?",
+    "input": "invalid type assertion: x.(T) (non-interface type x on left)\n",
+    "output": "This error occurs when you're trying to perform a type assertion on a non-interface type 'x'. Type assertions can only be used with interface types. If you need to convert the type of 'x', use a type conversion instead of a type assertion."
+  },
+  {
+    "instruction": "How to fix 'too many arguments to function' error in Go?",
+    "input": "too many arguments to function\n",
+    "output": "This error occurs when you're passing more arguments to a function than it expects. Check the function declaration and make sure you're providing the correct number of arguments. Remove any extra arguments or revise the function's parameter list if necessary."
+  },
+  {
+    "instruction": "How to handle 'undefined: package' error in Go?",
+    "input": "undefined: package\n",
+    "output": "This error suggests that the specified package is not imported or declared in the current file. Check your import statements and verify that the package name is correct. If the package is not part of the standard library, ensure that it is installed and accessible in your Go workspace."
+  },
+  {
+    "instruction": "What causes 'invalid operation: x (type X) does not support indexing' error in Go?",
+    "input": "invalid operation: x (type X) does not support indexing\n",
+    "output": "This error occurs when you're trying to access an element of a value 'x' that doesn't support indexing, such as a map or a struct. Make sure 'x' is of a type that allows indexing, such as an array, slice, or string."
+  },
+  {
+    "instruction": "How to resolve 'expected operand, found '.'' error in Go?",
+    "input": "expected operand, found '.'\n",
+    "output": "This error occurs when there is a misplaced dot '.' in your code. Check the line mentioned in the error message and verify if the dot is used in a valid context. Ensure that the dot is used to access a field or a method of a struct, or as part of a package name in an import statement."
+  },
+  {
+    "instruction": "What causes 'undefined: function' error in Go?",
+    "input": "undefined: function\n",
+    "output": "This error occurs when you're trying to use a function that is not defined or declared in the current file or package. Make sure the function is properly declared and implemented. If the function is defined in another package, import the package and use the correct function name."
+  },
+  {
+    "instruction": "How to fix 'non-declaration statement outside function body' error in Go?",
+    "input": "non-declaration statement outside function body\n",
+    "output": "This error suggests that you have a statement outside of a function body, which is not allowed in Go. Move the statement inside a function or declare a function if you intend to execute code at the package level."
+  },
+  {
+    "instruction": "How to handle 'cannot assign to _'' error in Go?",
+    "input": "cannot assign to _\n",
+    "output": "This error occurs when you're trying to assign a value to the blank identifier '_'. The blank identifier is used to ignore a value, and it cannot be assigned a new value. Remove or replace the assignment to the blank identifier to fix the error."
+  },
+  {
+    "instruction": "What causes 'undefined: variable/function' error in Go?",
+    "input": "undefined: variable/function\n",
+    "output": "This error indicates that the variable or function you're trying to use is not defined in the current file or package. Make sure the variable or function is properly declared and accessible. Check for any misspelling or missing import statements if the variable or function is defined in another package."
+  },
+  {
+    "instruction": "How to resolve 'invalid operation: x == nil (mismatched types X and nil)' error in Go?",
+    "input": "invalid operation: x == nil (mismatched types X and nil)\n",
+    "output": "This error occurs when you're trying to compare a value 'x' of type 'X' with 'nil', but the types are not compatible for comparison. Ensure that 'x' is of a pointer type or an interface type to be compared against 'nil'."
+  },
+  {
+    "instruction": "How to fix 'undeclared name: variable' error in Go?",
+    "input": "undeclared name: variable\n",
+    "output": "This error suggests that the variable you're trying to use is not declared or defined in the current scope. Make sure you have declared the variable before using it, either in the same function or in an accessible outer scope."
+  },
+  {
+    "instruction": "What causes 'invalid use of '.' to access field/method' error in Go?",
+    "input": "invalid use of '.' to access field/method\n",
+    "output": "This error occurs when you're trying to access a field or method using the dot '.' operator on a non-struct or non-interface value. Verify that the value is of a struct or interface type that defines the desired field or method."
+  },
+  {
+    "instruction": "How to handle 'constant x overflows int' error in Go?",
+    "input": "constant x overflows int\n",
+    "output": "This error indicates that a constant value 'x' is too large to fit into the 'int' type. Consider using a larger integer type, such as 'int64', to accommodate the value of 'x'. If the value is not intended to be a constant, use a variable of the appropriate type."
+  },
+  {
+    "instruction": "What causes 'undefined: type' error in Go?",
+    "input": "undefined: type\n",
+    "output": "This error occurs when you're trying to use a type that is not defined in the current file or package. Make sure the type is properly declared and accessible. Check for any misspelling or missing import statements if the type is defined in another package."
+  },
+  {
+    "instruction": "How to resolve 'invalid operation: x != nil (mismatched types X and nil)' error in Go?",
+    "input": "invalid operation: x != nil (mismatched types X and nil)\n",
+    "output": "This error occurs when you're trying to compare a value 'x' of type 'X' with 'nil', but the types are not compatible for comparison. Ensure that 'x' is of a pointer type or an interface type to be compared against 'nil'."
+  },
+  {
+    "instruction": "How to fix 'missing function body' error in Go?",
+    "input": "missing function body\n",
+    "output": "This error occurs when you declare a function without providing its implementation. Make sure to include the function body, which contains the executable statements, between curly braces '{' and '}'. If the function should not have any implementation, consider marking it as 'func functionName() {}' or remove the function declaration altogether."
+  },
+  {
+    "instruction": "What causes 'ambiguous import: found package1 and package2' error in Go?",
+    "input": "ambiguous import: found package1 and package2\n",
+    "output": "This error occurs when you have conflicting import statements that refer to packages with the same name. Check your import statements and ensure that the package names and paths are unambiguous. If both packages are required, consider using different import names to disambiguate them."
+  },
+  {
+    "instruction": "How to handle 'expected 'package', found 'identifier'' error in Go?",
+    "input": "expected 'package', found 'identifier'\n",
+    "output": "This error occurs when the Go compiler expects a 'package' keyword but encounters an identifier instead. Verify that you have a valid package declaration at the beginning of your file. Ensure that there are no misplaced or missing keywords or identifiers in your code."
+  },
+  {
+    "instruction": "How to fix 'unexpected token: token' error in Go?",
+    "input": "unexpected token: token\n",
+    "output": "This error indicates that there is an unexpected token in your code. Check the line mentioned in the error message and verify the token at that position. Make sure the syntax and usage of the token are correct. Look for missing or misplaced symbols or keywords that might have caused the error."
+  },
+  {
+    "instruction": "What causes 'invalid operation: x < y (operator < not defined on T)' error in Go?",
+    "input": "invalid operation: x < y (operator < not defined on T)\n",
+    "output": "This error occurs when you're trying to compare two values of type 'T' using the '<' operator, but the '<' operation is not defined for type 'T'. Implement the '<' operator for type 'T' if you want to compare its values using the '<' operator."
+  },
+  {
+    "instruction": "How to resolve 'cannot use type as type' error in Go?",
+    "input": "cannot use type as type\n",
+    "output": "To resolve this error, you need to use a valid expression or type in place of 'type'. Verify that you're not using the keyword 'type' as a variable name or type name. Review your code and replace 'type' with the appropriate expression or type name."
+  },
+  {
+    "instruction": "How to fix 'cannot assign to const' error in Go?",
+    "input": "cannot assign to const\n",
+    "output": "This error occurs when you're trying to assign a value to a constant variable. Constants cannot be reassigned after their initial declaration. If you need a mutable variable, declare it using the 'var' keyword instead of 'const'."
+  },
+  {
+    "instruction": "What causes 'too few values in struct initializer' error in Go?",
+    "input": "too few values in struct initializer\n",
+    "output": "This error occurs when you're initializing a struct with too few values. Check the struct definition and ensure that you provide the correct number of values for each field during initialization. If some fields have default values, consider using the struct literal syntax '{ field1: value1, field2: value2 }' to initialize specific fields."
+  },
+  {
+    "instruction": "How to handle 'unresolved reference' error in Go?",
+    "input": "unresolved reference\n",
+    "output": "This error suggests that there is an unresolved reference in your code, typically caused by a misspelled or missing identifier. Check the referenced name and ensure it is correctly spelled and declared in the appropriate scope. If the identifier is defined in another package, make sure to import the package and use the correct name."
+  },
+  {
+    "instruction": "What causes 'invalid operation: x > y (operator > not defined on T)' error in Go?",
+    "input": "invalid operation: x > y (operator > not defined on T)\n",
+    "output": "This error occurs when you're trying to compare two values of type 'T' using the '>' operator, but the '>' operation is not defined for type 'T'. Implement the '>' operator for type 'T' if you want to compare its values using the '>' operator."
+  },
+  {
+    "instruction": "How to resolve 'missing return at end of function' error in Go?",
+    "input": "missing return at end of function\n",
+    "output": "This error occurs when a function is declared to return a value, but there is no return statement or the return statement is missing at the end of the function. Make sure to include a return statement that returns the appropriate value or revise the function's return type if it should not return any value."
+  },
+  {
+    "instruction": "How to fix 'undeclared name: function' error in Go?",
+    "input": "undeclared name: function\n",
+    "output": "This error indicates that the function you're trying to use is not declared or defined in the current scope. Make sure you have declared the function before using it, either in the same file or in an accessible package. Check for any misspelling or missing import statements if the function is defined in another package."
+  },
+  {
+    "instruction": "What causes 'invalid operation: x <= y (operator <= not defined on T)' error in Go?",
+    "input": "invalid operation: x <= y (operator <= not defined on T)\n",
+    "output": "This error occurs when you're trying to compare two values of type 'T' using the '<=' operator, but the '<=' operation is not defined for type 'T'. Implement the '<=' operator for type 'T' if you want to compare its values using the '<=' operator."
+  },
+  {
+    "instruction": "How to handle 'missing function arguments' error in Go?",
+    "input": "missing function arguments\n",
+    "output": "This error occurs when you're calling a function without providing the required arguments. Check the function signature and make sure to pass the correct number and types of arguments. Revise the function call to include the required arguments."
+  },
+  {
+    "instruction": "What causes 'invalid operation: x >= y (operator >= not defined on T)' error in Go?",
+    "input": "invalid operation: x >= y (operator >= not defined on T)\n",
+    "output": "This error occurs when you're trying to compare two values of type 'T' using the '>=' operator, but the '>=' operation is not defined for type 'T'. Implement the '>=' operator for type 'T' if you want to compare its values using the '>=' operator."
+  },
+  {
+    "instruction": "How to resolve 'undefined: variable' error in Go?",
+    "input": "undefined: variable\n",
+    "output": "This error indicates that the variable you're trying to use is not defined in the current scope. Make sure you have declared the variable before using it, either in the same function or in an accessible outer scope."
+  },
+  {
+    "instruction": "What causes 'invalid operation: x != y (operator != not defined on T)' error in Go?",
+    "input": "invalid operation: x != y (operator != not defined on T)\n",
+    "output": "This error occurs when you're trying to compare two values of type 'T' using the '!=' operator, but the '!=' operation is not defined for type 'T'. Implement the '!=' operator for type 'T' if you want to compare its values using the '!=' operator."
+  },
+  {
+    "instruction": "How to fix 'missing return statement' error in Go?",
+    "input": "missing return statement\n",
+    "output": "This error occurs when a function is declared to return a value, but there is no return statement inside the function body. Make sure to include a return statement that returns the appropriate value or revise the function's return type if it should not return any value."
+  },
+  {
+    "instruction": "How to handle 'cannot convert x (type X) to type Y' error in Go?",
+    "input": "cannot convert x (type X) to type Y\n",
+    "output": "To fix this error, you need to explicitly convert the value 'x' of type 'X' to type 'Y'. Use the correct conversion syntax, such as 'y := Y(x)', where 'y' is of type 'Y'."
+  },
+  {
+    "instruction": "What causes 'invalid operation: x == y (operator == not defined on T)' error in Go?",
+    "input": "invalid operation: x == y (operator == not defined on T)\n",
+    "output": "This error occurs when you're trying to compare two values of type 'T' using the '==' operator, but the '==' operation is not defined for type 'T'. Implement the '==' operator for type 'T' if you want to compare its values using the '==' operator."
+  },
+  {
+    "instruction": "How to resolve 'undefined: method' error in Go?",
+    "input": "undefined: method\n",
+    "output": "This error indicates that the method you're trying to use is not defined for the given type or interface. Make sure the method is declared and implemented in the correct type or interface. If you're trying to call a method on a variable of an interface type, ensure the underlying type implements the method."
+  },
+  {
+    "instruction": "What causes 'invalid type assertion: x.(T) (non-interface type x on left)' error in Go?",
+    "input": "invalid type assertion: x.(T) (non-interface type x on left)\n",
+    "output": "This error occurs when you're trying to perform a type assertion on a non-interface type 'x'. Type assertions can only be used with interface types. If you need to convert the type of 'x', use a type conversion instead of a type assertion."
+  }
+]

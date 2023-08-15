@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/browser-fs-access@1.1.0/dist/browser-fs-access.js"></script>
+    <title>Intelligent Log System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            gap: 1rem;
+            background-color: #f0f0f0;
+        }
+
+        textarea,
+        button {
+            width: 600px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 200px;
+            padding: 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: none;
+            outline: none;
+        }
+
+        button {
+            height: 40px;
+            background-color: #2196f3;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1976d2;
+        }
+
+        .process-buttons {
+            display: flex;
+            gap: 1rem;
+            width: 30rem;
+        }
+    </style>
+</head>
+
+<body>
+<textarea id="inputText" placeholder="Logs"></textarea>
+<button id="uploadButton" style="width: 20rem ">Upload</button>
+<div class="process-buttons">
+    <button id="extractButton">Extraction</button>
+    <button id="summarizeButton">Report</button>
+    <button id="analyzeButton">Analyse</button>
+    <button id="answerButton">Answer</button>
+</div>
+<textarea style="height:40px" id="questionInput" placeholder="Question: "></textarea>
+<textarea id="outputText" placeholder="Resp" readonly></textarea>
+<script>
+    const inputText = document.getElementById('inputText');
+    const uploadButton = document.getElementById('uploadButton');
+    const extractButton = document.getElementById('extractButton');
+    const summarizeButton = document.getElementById('summarizeButton');
+    const analyzeButton = document.getElementById('analyzeButton');
+    const answerButton = document.getElementById('answerButton');
+    const outputText = document.getElementById('outputText');
+    const questionInputText = document.getElementById('questionInput');
+
+
+    const base_url = "https://d66b-35-239-50-229.ngrok-free.app";
+    let uploadedText = '';
+
+    uploadButton.addEventListener('click', async () => {
+        try {
+            // Read file
+            const file = await window.showOpenFilePicker();
+            const fileHandle = file[0];
+            const fileContent = await fileHandle.getFile();
+            const reader = new FileReader();
+
+            reader.onload = async (e) => {
+                uploadedText = e.target.result;
+                inputText.value = uploadedText;
+                jsonLog = JSON.stringify(uploadedText)
+                // Send to backend
+                let formData = new FormData();
+                formData.append('input', uploadedText);
+                console.log(uploadedText)
+
+                fetch(base_url + "/upload", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json;charset=UTF-8'
+                    },
+                    body: JSON.stringify({input: uploadedText})
+                }).then(response => {
+                    if (!response.ok) throw new Error('Network response was not ok');
+                    return response.json();
+                }).then(data => {
+                    alert('Upload successfully');
+                }).catch(err => {
+                    console.error('Upload failed:', err);
+                });
+            };
+            reader.readAsText(fileContent);
+        } catch (error) {
+            console.error('Error in reading file:', error);
+        }
+    });
+
+    const processText = (endpoint) => {
+        fetch(base_url + "/" + endpoint, {
+            method: 'POST',
+        })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                outputText.value = data.output;
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+                alert('Error, please try again');
+            });
+    };
+
+    const answerText = (endpoint) => {
+
+        fetch(base_url + "/" + endpoint, {
+            method: 'POST',
+            body: JSON.stringify({instruction: questionInputText.value}),
+            headers: {
+                'Content-Type': 'application/json;charset=UTF-8'
+            },
+        })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => {
+                outputText.value = data.output;
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+                alert('Error, please try again');
+            });
+    };
+
+    extractButton.addEventListener('click', () => {
+        processText('extract');
+    });
+
+    summarizeButton.addEventListener('click', () => {
+        processText('report');
+    });
+
+    analyzeButton.addEventListener('click', () => {
+        processText('analyze');
+    });
+
+    answerButton.addEventListener('click', () => {
+        answerText('question-answering');
+    })
+</script>
+</body>
+
+</html>
