@@ -16,6 +16,6 @@
 
 ## 3. Guide
 
-Please read: 
-* [Technical Report](docs/EBA5004_Intelligent Log System.pdf)
-* [Deployment Guide](docs/Guide_Deployment.pdf)
+Please read [docs](docs): 
+* Technical Report
+* Deployment Guide
